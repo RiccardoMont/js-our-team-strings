@@ -28,10 +28,11 @@ for(let i = 0; i < teamMembers.length; i++){
     //img.src = "https://picsum.photos/300/200";
     div.style.width = "30%";
     img.style.height = "200px";
+    img.style.opacity = "0.5";
     img.src = `${avatar}`;
 
 
-    div.classList.add('card', 'd-flex', 'justify-content-center', 'align-items-center', 'p-4', 'mb-4');
+    div.classList.add('card', 'd-flex', 'justify-content-center', 'align-items-center', 'gap-2', 'p-4', 'mb-4', 'bg-warning-subtle');
     //img.classList.add('h-200px');
 
     div.append(img);
@@ -50,6 +51,7 @@ for(let i = 0; i < teamMembers.length; i++){
 
 
 const card = document.querySelectorAll('.card');
+const img = document.querySelectorAll('img');
 
 for(let i = 0; i < card.length; i++){
     
@@ -57,16 +59,18 @@ for(let i = 0; i < card.length; i++){
 
         //const div = document.querySelector('.card');
         console.log('hai cliccato');
+        
 
 
-
-        if(card[i].classList.contains('bg-primary')){
+        if(card[i].classList.contains('bg-warning-subtle')){
             console.log('dentro if');
-            card[i].classList.remove('bg-primary');
+            card[i].classList.remove('bg-warning-subtle');
+            img[i].style.opacity = "1";
 
         } else {
             console.log('dentro else');
-            card[i].classList.add('bg-primary');
+            card[i].classList.add('bg-warning-subtle');
+            img[i].style.opacity = "0.5";
 
         }
         
